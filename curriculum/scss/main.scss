@@ -1,0 +1,141 @@
+@import '_variables';
+@import '_funciones';
+
+* {
+    box-sizing: border-box;
+    font-family: $fuente;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: $contenedor_fondo;
+    .datos_personales {
+        margin-top: 5px;
+        margin-left: 5px;
+        padding: 5px;
+        width: 20%;
+        height: auto;
+        background-color: $datospersonales_fondo;
+        display: flex;
+        flex-direction: column;
+    
+        .foto_persona img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        ul li::marker {
+            color: $puntos_lista;
+            font-size: 1.5em;
+        }
+        progress {
+            width: 100%;
+        }
+        
+    }
+    .datos_laborales {
+        margin: 5px;
+        padding: 2px;
+        width: 75%;
+        height: auto;
+        .linea-tiempo {
+            position: relative;
+            width: 500px;
+            max-width: 95vw;
+            height: 100%;
+        }
+        
+        .momento {
+            position: relative;
+            width: 45%;
+            box-sizing: border-box;
+        }
+        
+        .momento:nth-child(even) {
+            left: 55%;
+        }
+        
+        .linea-tiempo::before {
+            content: '';
+            position: absolute;
+            width: 3px;
+            background-color: $linea;
+            left: 50%;
+            height: 100%;
+            border-radius: 10px;
+        }
+        
+        .momento::after {
+            content: '';
+            position: absolute;
+            @include after_top;
+            @include after_rigth;
+            height: 20px;
+            width: 20px;
+            background-color: $linea;
+            border-radius: 50%;
+        }
+        
+        .momento:nth-child(even)::after {
+            @include child_left;
+        }
+        
+        .fotos {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            border: solid 2px $linea;
+        }
+        
+        .fotos img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        
+        .foto_java {
+           @include ancho_fotos;
+        }
+        
+        .foto_kotlin {
+            @include ancho_fotos;
+        }
+        
+        .foto_c {
+            @include ancho_fotos;
+        }
+        
+        .foto_phyton {
+            @include ancho_fotos;
+        }
+    }
+    
+}
+
+h2 {
+    @include titulos
+}
+
+h1 {
+    @include titulos;
+    text-align: center;
+}
+
+h3 {
+  @include titulos;
+
+}
+
+p {
+    margin-left: 15px;
+}
+
+hr {
+    margin-top: 15px;
+    margin-left: 8px;
+    margin-right: 8px;
+    background-color: $linea;
+    height: 1.10px;
+}
+

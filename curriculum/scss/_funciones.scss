@@ -1,0 +1,19 @@
+
+@mixin titulos{
+    color: white;
+    margin-top: 10px;
+    margin-left: 15px;
+    display: block;
+}
+@mixin ancho_fotos {
+    width: 25%;
+}
+@mixin after_top {
+    top:calc(50% + 10px);
+}
+@mixin after_rigth {
+    right: calc(-11.11% - 11.5px);
+}
+@mixin child_left {
+    left: calc(-11.11% - 8.5px);
+}
